@@ -1,6 +1,13 @@
 {
-  "name": "My App",
-  "short_name": "App",
+  "name": "Favicon Generator",
+  "short_name": "FaviconGen",
+  "description": "Create custom favicons and export them as SVG, PNG, or a full ZIP package with icons for every platform.",
+  "lang": "en",
+  "scope": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
   "icons": [
     {
       "src": "/apple-touch-icon.png",
@@ -15,11 +22,8 @@
     {
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ],
-  "theme_color": "#000000",
-  "background_color": "#000000",
-  "display": "standalone",
-  "start_url": "/"
+  ]
 }
