@@ -1,0 +1,115 @@
+# ==============================================================
+# robots.txt – Favicon Generator
+# https://your-domain.com
+#
+# Last updated: 2025
+# ==============================================================
+
+
+# ── Well-behaved search engine crawlers ────────────────────────
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 10
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 10
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 10
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 10
+
+
+# ── AI training & data harvesting crawlers (opt-out) ───────────
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+
+# ── Aggressive SEO / analytics crawlers ───────────────────────
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+
+# ── Default fallback ───────────────────────────────────────────
+User-agent: *
+Allow: /
+Crawl-delay: 10
+
+
+# ── Sitemap ────────────────────────────────────────────────────
+# Sitemap: https://your-domain.com/sitemap.xml
