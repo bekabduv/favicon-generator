@@ -1,6 +1,6 @@
 # ==============================================================
 # robots.txt – Favicon Generator
-# https://your-domain.com
+# https://favicon-generator-93y.pages.dev
 #
 # Last updated: 2025
 # ==============================================================
@@ -112,4 +112,4 @@ Crawl-delay: 10
 
 
 # ── Sitemap ────────────────────────────────────────────────────
-# Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://favicon-generator-93y.pages.dev/sitemap.xml
