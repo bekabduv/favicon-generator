@@ -2,7 +2,7 @@ import type { Font } from "opentype.js";
 
 // -----------------------------------
 
-const getFontUrl = (
+const getGoogleFontUrl = (
   family: string,
   weight: number,
   text: string,
@@ -51,7 +51,7 @@ export const loadFont = async (
 
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = getFontUrl(
+  link.href = getGoogleFontUrl(
     fontFamily.replace(/\s/g, "+"),
     fontWeight,
     newChars.replace(/\s/g, ""),

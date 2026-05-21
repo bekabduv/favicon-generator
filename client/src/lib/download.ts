@@ -24,11 +24,11 @@ type Props = {
   svgString: string;
 };
 
-type Icons = Array<{
+type IconConfig = {
   src: `/${FileName}`;
   sizes: `${Size}x${Size}`;
   type: "image/png";
-}>;
+};
 
 export const downloadZip = async ({
   backgroundColor,
@@ -85,7 +85,7 @@ export const downloadZip = async ({
         sizes: "512x512",
         type: "image/png",
       },
-    ] satisfies Icons,
+    ] satisfies Array<IconConfig>,
 
     theme_color: backgroundColor,
     background_color: backgroundColor,

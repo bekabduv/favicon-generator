@@ -1,7 +1,6 @@
 import type { Component } from "solid-js";
 import {
   createContext,
-  createMemo,
   createResource,
   type JSXElement,
   useContext,
@@ -12,38 +11,48 @@ type FontContextProps = {
   children: JSXElement;
 };
 
-export type FontMapConfig = {
+export type FontsConfig = {
   index: number;
 } & APIResponse[number];
 
 type FontContextValues = {
-  fontsList: () => APIResponse | undefined;
-  fontsMap: () => Map<string, FontMapConfig>;
-  loading: () => boolean;
+  fontsList: () => Array<string>;
+  fontsMap: () => Map<string, FontsConfig>;
 };
 
 const FontContext = createContext<FontContextValues>();
 
 export const FontProvider: Component<FontContextProps> = (props) => {
-  const [fontsList] = createResource<APIResponse>(() =>
-    fetch(import.meta.env.VITE_API_URL).then((res) => res.json()),
+  const [fonts] = createResource(
+    async () => {
+      const response = await fetch(import.meta.env.VITE_API_URL);
+      const data: APIResponse = await response.json();
+
+      const map = new Map<string, FontsConfig>();
+      const list: Array<string> = [];
+
+      for (let i = 0; i < data.length; i++) {
+        const item = data[i];
+        if (!item) continue;
+        (item as FontsConfig & { index: number }).index = i;
+        map.set(item.family, item as FontsConfig);
+
+        list.push(item.family);
+      }
+
+      return { map, list };
+    },
+    {
+      initialValue: { list: [], map: new Map() },
+    },
   );
 
-  const fontsMap = createMemo(() => {
-    const map = new Map<string, FontMapConfig>();
-    if (!fontsList()) return map;
-    fontsList()?.forEach(({ family, files, menu, variants }, index) => {
-      map.set(family, { index, family, files, menu, variants });
-    });
-    return map;
-  });
-
+  ////////////////////////////
   return (
     <FontContext.Provider
       value={{
-        fontsList,
-        fontsMap,
-        loading: () => fontsList.loading,
+        fontsList: () => fonts().list,
+        fontsMap: () => fonts().map,
       }}
     >
       {props.children}

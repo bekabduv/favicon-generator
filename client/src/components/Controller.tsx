@@ -90,10 +90,9 @@ const Controller = (props: Props) => {
                 }
               >
                 <SelectFontFamily
-                  setValue={(value) => props.setControls("fontFamily", value)}
                   value={props.controls.fontFamily}
                   onChange={(item) =>
-                    item && props.setControls("fontFamily", item?.family)
+                    item && props.setControls("fontFamily", item)
                   }
                 />
               </Suspense>

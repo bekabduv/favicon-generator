@@ -25,7 +25,7 @@ const Favicon = (props: Props) => {
   const { fontsMap } = useFonts();
 
   const links = document.querySelectorAll(
-    "link:is([rel='icon'], [rel='apple-touch-icon']",
+    "link:is([rel='icon'], [rel='apple-touch-icon'])",
   );
   links.forEach((link) => {
     link?.remove();

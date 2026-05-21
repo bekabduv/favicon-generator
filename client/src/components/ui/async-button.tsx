@@ -28,7 +28,7 @@ const AsyncButton = (props: Props) => {
       disabled={pending() || rest.disabled}
       type={rest.type ?? "button"}
       onClick={handleClick}
-      class={`${local.class} group relative inline-flex cursor-pointer items-center gap-2 rounded-sm px-3 py-2 font-semibold text-white text-xs shadow-sm transition-all duration-200  hover:shadow-md disabled:cursor-not-allowed disabled:opacity-20 disabled:shadow-none`}
+      class={`${local.class} group relative inline-flex cursor-pointer items-center gap-2 rounded-sm px-3 py-2 font-semibold text-white text-xs shadow-sm transition-all duration-200 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-20 disabled:shadow-none`}
       classList={{
         "group-hover:translate-y-0.5 active:scale-95": !pending(),
       }}
